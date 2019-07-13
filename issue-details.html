@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head id="header"></head>
+
+<body>
+
+<!-- Main Wrapper Start -->
+<div class="main-wrapper">
+
+    <!-- Header Section Start -->
+    <div id="headersection"></div>
+    <!-- Header Section End -->
+
+    <!-- News Section Start -->
+    <div class="news-section section pt-120 pb-0">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8 col-12 mb-0" style="margin:auto">
+                    <div class="row">
+
+                        <!-- News Start -->
+                        <div class="single-news col-12 mb-0">
+
+                            <!-- Image -->
+                            <div class="image"><img id="img1" src="" alt="News Details" style="margin:auto; display:block"></div>
+
+                            <!-- Content -->
+                            <div class="content">
+                                <h3 id="big"></h3>
+                                <p id="p1"></p>
+                                <p id="p2"></p>
+                                <h3 id="big2"></h3>
+                                <p id="p3"></p>
+                            </div>
+                            
+                            <!-- News Footer -->
+                            <div class="news-footer">
+                                
+                                <!-- Share -->
+                                <div class="news-share">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/nathanberryhill"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://instagram.com/nathanberryhill"><i class="fa fa-instagram"></i></a>
+                                </div>
+                                
+                            </div>
+
+                        </div><!-- News End -->
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div><!-- News Section End -->
+
+    <!-- Footer Top Section Start -->
+    <div id="footersection"></div>
+    <!-- Footer Bottom Section End -->
+    
+</div><!-- Main Wrapper End -->
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+<!-- Popper JS -->
+<script src="assets/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins JS -->
+<script src="assets/js/plugins.js"></script>
+<!-- Ajax Mail -->
+<script src="assets/js/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<script>$(document).ready(function() {
+    $('#header').load('header.html');
+    $('#headersection').load('headersection.html');
+    $('#footersection').load('footersection.html');
+    setTimeout(function() {
+    $('#index').removeClass('active');
+    $('#issue').addClass('active');
+    }, 50)
+    var $_GET=[];
+    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
+    var issue = $_GET['issue'];
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var j = JSON.parse(this.responseText);
+            $('#big').html(j[issue].big);
+            $('#img1').attr('src',j[issue].img1);
+            $('#p1').html(j[issue].p1);
+            $('#p2').html(j[issue].p2);
+            $('#big2').html(j[issue].big2);
+            $('#p3').html(j[issue].p3);
+      }
+};
+xmlhttp.open("GET", "issues.json", true);
+xmlhttp.send();
+});</script>
+
+</body>
+
+</html>

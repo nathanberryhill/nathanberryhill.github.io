@@ -1,0 +1,79 @@
+<div class="header-section section">
+        <!-- Header Bottom Start -->
+        <div class="header-bottom header-sticky">
+            <div class="container">
+                <div class="row">
+                            
+                    <!-- Logo Start -->
+                    <div class="col">
+                        <a href="index.html" class="logo"><img width="200px" src="assets/images/logoa.png" alt="Logo"></a>
+                    </div><!-- Logo End -->
+
+                    <!-- Main Menu Start -->
+                    <div class="col d-none d-lg-block">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                    <li id="index" class="active"><a href="index.html">Home</a></li>
+                                    <li id="about"><a href="about.html">About</a></li>
+                                    <li id="issue" class="menu-item-has-children"><a href="issues.html">Issues</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="issue-details.html?issue=cbp">Border Security</a></li>
+                                            <li><a href="issue-details.html?issue=cjr">Criminal Justice</a></li>
+                                            <li><a href="issue-details.html?issue=nrg">Energy</a></li>
+                                            <li><a href="issue-details.html?issue=hed">Higher Education</a></li>
+                                            <li><a href="issue-details.html?issue=lfe">Life</a></li>
+                                            <li><a href="issue-details.html?issue=ped">Public Educaton</a></li>
+                                            <li><a href="issue-details.html?issue=ptx">Property Taxes</a></li>
+                                            <li><a href="issue-details.html?issue=elr">Redistricting</a></li>
+                                            <li><a href="issue-details.html?issue=gov">Transparency</a></li>
+                                            <li><a href="issue-details.html?issue=vet">Veterans</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="cmpgn"><a href="events.html">Events</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div><!-- Main Menu End -->
+
+                    <!-- Mobile Menu Start -->
+                    <div class="mobile-menu d-block d-lg-none col"><nav>
+                                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"> Menu</i><ul id="myLinks" style="display:none"></a>
+                                    <li id="index" class="active"><a href="index.html">Home</a></li>
+                                    <li id="about"><a href="about-us.html">About</a></li>
+                                    <li id="issue" class="menu-item-has-children"><a href="issues.html">Issues</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="issue-details.html?issue=cjr">Criminal Justice</a></li>
+                                            <li><a href="issue-details.html?issue=cbp">Border Security</a></li>
+                                            <li><a href="issue-details.html?issue=vet">Veterans</a></li>
+                                            <li><a href="issue-details.html?issue=edu">Higher Education</a></li>
+                                            <li><a href="issue-details.html?issue=elr">Redistricting</a></li>
+                                            <li><a href="issue-details.html?issue=gov">Transparency</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="cmpgn"><a href="events.html">Events</a></li>
+                                </ul>
+                            </nav></div><!-- Mobile Menu End -->
+
+                    <!-- Header Button Start -->
+                    <div class="col">
+                        <div class="header-button">
+                            <a href="donate.html" class="btn btn-red">Donate</a>
+                        </div>
+                    </div><!-- Header Button End -->
+                    
+                </div>
+            </div>
+        </div><!-- Header Bottom End -->
+    </div>
+<br>
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
