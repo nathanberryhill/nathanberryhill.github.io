@@ -319,62 +319,6 @@
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
 
-
-<!-- VMap JS -->
-<!-- <script src="assets/js/jquery.vmap.min.js"></script>
-<script src="assets/js/maps/jquery.vmap.world.js"></script> -->
-
-<!-- VMap Active JS -->
-<!-- <script>
-
-/*    function escapeXml(string) {
-        return string.replace(/[<>]/g, function (c) {
-            switch (c) {
-                case '<': return '\u003c';
-                case '>': return '\u003e';
-            }
-        });
-    }
-
-    jQuery(document).ready(function () {
-
-        var pins = {
-            cn: escapeXml('<div class="vmap-pin-text"><p>Floor. 4 House. 15, Block C, Banasree Main Rd, Dhaka</p></div><span class="vmap-pin"></span>'),
-            ca: escapeXml('<div class="vmap-pin-text"><p>Floor. 4 House. 15, Block C, Banasree Main Rd, Dhaka</p></div><span class="vmap-pin"></span>'),
-            au: escapeXml('<div class="vmap-pin-text"><p>Floor. 4 House. 15, Block C, Banasree Main Rd, Dhaka</p></div><span class="vmap-pin"></span>'),
-            br: escapeXml('<div class="vmap-pin-text"><p>Floor. 4 House. 15, Block C, Banasree Main Rd, Dhaka</p></div><span class="vmap-pin"></span>'),
-        };
-
-        jQuery('#world-vmap').vectorMap({
-            backgroundColor: 'transparent',
-            borderColor: '#6f89a2',
-            map: 'world_en',
-            pins: pins,
-            color: '#6f89a2',
-            enableZoom: false,
-            pinMode: 'content',
-            selectedColor: '#6f89a2',
-            hoverColor: '#ef3345',
-            showTooltip: true,
-            selectedRegions: ['CN', 'CA', 'AU', 'BR'],
-            onRegionClick: function(element, code, region)
-            {
-                var message = '<h4>'
-                    + region
-                    + ' Office</h4> <p></p> '
-
-                    var $this = $(this).find('div[for='+ code +']').find('.vmap-pin-text');
-                    if ($this.hasClass('open')) {
-                        $this.removeClass('open').find('h4').remove();
-                    } else {
-                        $this.addClass('open').prepend(message);
-                    }
-                
-            }
-        });
-
-    }); */
-</script> -->
 <script>$(document).ready(function() {
     $('#header').load('header.html');
     $('#headersection').load('headersection.html');
