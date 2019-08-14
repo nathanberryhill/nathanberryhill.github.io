@@ -3331,7 +3331,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: inline-flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-  .subscribe-form input[type="email"], input[type="text"] {
+  .subscribe-form input[type="email"], .subscribe-form input[type="text"] {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -3347,13 +3347,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     letter-spacing: 0.2px;
     font-size: 14px;
     color: #ffffff; }
-    .subscribe-form input[type="email"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder,  {
+    .subscribe-form input[type="email"]::-webkit-input-placeholder, .subscribe-form input[type="text"]::-webkit-input-placeholder,  {
       color: #ffffff; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .subscribe-form input[type="email"], input[type="text"] {
+      .subscribe-form input[type="email"], .subscribe-form input[type="text"] {
         width: 400px; } }
     @media only screen and (max-width: 767px) {
-      .subscribe-form input[type="email"], input[type="text"] {
+      .subscribe-form input[type="email"], .subscribe-form input[type="text"] {
         width: 100%;
         text-align: center; } }
   .subscribe-form button {
