@@ -3225,7 +3225,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   .campaign-sidebar-newsletter-form label.success, .campaign-sidebar-newsletter-form label.valid {
     color: green; }
 
-.campaign-sidebar-newsletter-form input[type="email"] {
+.campaign-sidebar-newsletter-form input[type="email"], input[type="text"] {
   background-color: #404040;
   color: #ffffff;
   border: none;
@@ -3238,7 +3238,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 300;
   display: block;
   margin-bottom: 10px; }
-  .campaign-sidebar-newsletter-form input[type="email"]::-webkit-input-placeholder {
+  .campaign-sidebar-newsletter-form input[type="email"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder {
     color: #ffffff; }
 
 .campaign-sidebar-newsletter-form .button {
