@@ -1,19 +1,8 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head id="header">
-</head>
-
-<body>
-
-<!-- Main Wrapper Start -->
-<div class="main-wrapper">
-
-    <!-- Header Section Start -->
-    <div id="headersection"></div>
-    <!-- Header Section End -->
-
-    <!-- Campaign Section Start -->
+---
+layout: default
+title: events
+---
+<!-- Campaign Section Start -->
     <div class="campaign-section section pt-120 pb-70">
         <div class="container">
             <div class="row">
@@ -146,38 +135,7 @@
             </div>
         </div>
     </div><!-- Campaign Section End -->
-
-    <!-- Footer Top Section Start -->
-    <div id="footersection"></div>
-    <!-- Footer Bottom Section End -->
-    
-</div><!-- Main Wrapper End -->
-
-<!-- JS
-============================================ -->
-
-<!-- jQuery JS -->
-<script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
-<!-- Popper JS -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
-<!-- Ajax Mail -->
-<script src="assets/js/ajax-mail.js"></script>
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
-<script>$(document).ready(function() {
-    $('#header').load('header.html');
-    $('#headersection').load('headersection.html');
-    $('#footersection').load('footersection.html');
-    setTimeout(function() {
+<script>
     $('#index').removeClass('active');
     $('#cmpgn').addClass('active');
-    }, 50)
-});</script>
-
-</body>
-
-</html>
+</script>
