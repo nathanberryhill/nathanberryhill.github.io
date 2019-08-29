@@ -1,6 +1,17 @@
 ---
 layout: default
-title: issue_details
+title: details
+redirect_from: 
+ - /issues/cbp/
+ - /issues/cjr/
+ - /issues/nrg/
+ - /issues/hed/
+ - /issues/lfe/
+ - /issues/ped/
+ - /issues/ptx/
+ - /issues/elr/
+ - /issues/gov/
+ - /issues/vet/
 ---
 <!-- News Section Start -->
     <div class="news-section section pt-120 pb-0">
@@ -48,9 +59,8 @@ title: issue_details
 <script>$(document).ready(function() {
     $('#index').removeClass('active');
     $('#issue').addClass('active');
-    var $_GET=[];
-    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
-    var issue = $_GET['issue'];
+
+    var issue = location.href(-3,)
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
