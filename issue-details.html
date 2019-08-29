@@ -60,7 +60,7 @@ redirect_from:
     $('#index').removeClass('active');
     $('#issue').addClass('active');
 
-    var issue = location.href(-3,);
+    var issue = location.href.slice(-3,);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
