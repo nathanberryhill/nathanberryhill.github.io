@@ -2,4 +2,4 @@
 
 This repository contains the files for my personal campaign website for State Representative of District 54 in the Texas House of Representatives.
 
-It showcases the implementation of HTML, CSS, and JavaScript with JQuery, JSON, Bootstrap, and FontAwesome technologies.
+It showcases the implementation of HTML, CSS, and JavaScript with Jekyll, JQuery, JSON, Bootstrap, and FontAwesome technologies.
