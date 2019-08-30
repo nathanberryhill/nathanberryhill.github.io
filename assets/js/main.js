@@ -209,12 +209,12 @@ if(true) {
 
 /*--
     Scroll Up
------------------------------------*/
+-----------------------------------
 $.scrollUp({
     easingType: 'linear',
     scrollSpeed: 900,
     animation: 'fade',
     scrollText: '<i class="fa fa-angle-up"></i>',
-});
+}); */
 
 })(jQuery); 
