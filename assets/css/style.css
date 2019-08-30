@@ -2269,8 +2269,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation-name: fadeOutDown;
-    animation-name: fadeOutDown;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-delay: 0s;
     animation-delay: 0s;
     float: right;
@@ -2307,14 +2307,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         padding: 50px 15px; } }
     .hero-item .hero-content > div {
       overflow: hidden; }
-      .hero-item .hero-content > div * {
+       .hero-item .hero-content > div * {
         -webkit-animation-duration: 1s;
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
-        -webkit-animation-name: slideOutLeft;
-        animation-name: slideOutLeft; }
-      .hero-item .hero-content > div.title * {
+        -webkit-animation-name: slideInLeft;
+        animation-name: slideInLeft; }
+       .hero-item .hero-content > div.title * {
         -webkit-animation-delay: 0s;
         animation-delay: 0s; }
       .hero-item .hero-content > div.title-2 * {
