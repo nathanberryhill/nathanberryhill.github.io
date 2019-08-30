@@ -102,10 +102,10 @@ a, button {
   text-decoration: none;
   cursor: pointer; }
 
-a, button, img, input, span {
+/* a, button, img, input, span {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s; }
+  transition: all 0.3s ease 0s; } */
 
 *:focus {
   outline: none !important; }
@@ -2187,9 +2187,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     03. Hero
 -----------------------------------------*/
 /*-- Hero Slider --*/
-.hero-slider {
-  /*-- Arrow --*/
-  /*-- Dots --*/ }
   .hero-slider .slick-arrow {
     position: absolute;
     top: 50%;
@@ -2201,28 +2198,28 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.4);
     margin-top: 45px; }
-    .hero-slider .slick-arrow i {
+    /* .hero-slider .slick-arrow i {
       -webkit-transition: all 0s ease 0s;
       -o-transition: all 0s ease 0s;
       transition: all 0s ease 0s;
       font-size: 30px;
       display: block;
-      line-height: 70px; }
+      line-height: 70px; }*/
     .hero-slider .slick-arrow.slick-next {
       right: 30px; }
     .hero-slider .slick-arrow.slick-prev {
       left: 30px; }
-    .hero-slider .slick-arrow:hover {
+    /* .hero-slider .slick-arrow:hover {
       -webkit-transform: scale(1.15);
       -ms-transform: scale(1.15);
-      transform: scale(1.15); }
+      transform: scale(1.15); } */
   .hero-slider .slick-dots {
     position: absolute;
     right: 65px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
+    /*-webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    transform: translateY(-50%); */}
     @media only screen and (min-width: 992px) and (max-width: 1200px) {
       .hero-slider .slick-dots {
         right: 40px; } }
@@ -2265,14 +2262,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   /*-- Content --*/
   /*-- Active Content --*/ }
   .hero-item .hero-image img {
-    -webkit-animation-duration: 1s;
+    /* -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
     -webkit-animation-delay: 0s;
-    animation-delay: 0s;
+    animation-delay: 0s; */
     float: right;
     margin-right: -60px; }
     @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -2307,7 +2304,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         padding: 50px 15px; } }
     .hero-item .hero-content > div {
       overflow: hidden; }
-       .hero-item .hero-content > div * {
+       /* .hero-item .hero-content > div * {
         -webkit-animation-duration: 1s;
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
@@ -2325,7 +2322,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         animation-delay: 0s; }
       .hero-item .hero-content > div.button * {
         -webkit-animation-delay: 0s;
-        animation-delay: 0s; }
+        animation-delay: 0s; } */
     .hero-item .hero-content h1 {
       font-size: 100px;
       font-weight: 800;
@@ -2374,7 +2371,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
       @media only screen and (max-width: 767px) {
         .hero-item .hero-content .btn {
           margin-top: 20px; } }
-  .hero-item.slick-active .hero-image img {
+  /* .hero-item.slick-active .hero-image img {
     -webkit-animation-name: slideInUp;
     animation-name: slideInUp;
     -webkit-animation-delay: 0.5s;
@@ -2393,7 +2390,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     animation-delay: 1s; }
   .hero-item.slick-active .hero-content > div.button * {
     -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s; }
+    animation-delay: 1.5s; } */
 
 /*---------------------------------------
     04. About
