@@ -20,9 +20,32 @@ I also love to travel! Here I am on top of <a href="https://www.google.com/maps/
 <br><br>
 R&eacute;sum&eacute; link forthcoming.
 <br><br>
-Other links:<br>
-<a href="https://twitter.com/NathanBerryhill">Twitter</a> | <a href="https://instagram.com/nathanberryhill">Insta</a><br>
+Other Stuff:<br>
+<a href="https://twitter.com/NathanBerryhill">Twitter</a> | <a href="https://instagram.com/nathanberryhill">Instagram</a><br>
 <a href="img/sineGraph.svg">Sine Curves created using Python</a><br>
-<a href="img/sine.txt">Python Code for Sine Curves</a>
+<a href="img/sine.txt">Python Code for Sine Curves</a><br>
+Texas 2020 Primary: <span id="election2020"></span>
 </body>
+<script>
+var countDownDate = new Date("Mar 3, 2020 07:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("election2020").innerHTML = days + " days, " + hours + " hrs, "
+  + minutes + " mins, and " + seconds + " sec ";
+     
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("election2020").innerHTML = "";
+  }
+}, 1000);
+</script>
 </html>
