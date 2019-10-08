@@ -2,3 +2,4 @@ name: Nathan Berryhill
 description: personal website
 url: "nathanberryhill.org"
 markdown: kramdown
+highlighter: rouge
