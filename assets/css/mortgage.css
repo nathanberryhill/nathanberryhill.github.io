@@ -1,0 +1,72 @@
+html {
+	background: url("/assets/img/bg-01.jpg") no-repeat center center fixed;
+	background-size:cover;
+
+}
+body, html {
+	font-size:large;
+	height: 100%;
+	display: grid;
+	overflow-y:hidden;
+}
+
+.mortgage {
+	background-color:#fff;
+	margin: auto;
+	font-family: Courier, Monospace;
+	border-radius: 15px;
+	padding: 5px;
+}
+
+.btn {
+	vertical-align:middle;
+	text-align:center;
+}
+
+.txt {
+	text-align:center;
+	font-size: x-small;
+}
+
+h2 {
+	text-align:center;
+}
+
+input[type=text] {
+	font-family: Courier, Monospace;
+	vertical-align:middle;
+	height: 18px;
+	float:right;
+	border: 3px solid #ccc;
+	outline: none;
+}
+input[type=text]:focus {
+	transition: 0.5s;
+	border: 3px solid #449CFE;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.clear {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

@@ -1,0 +1,57 @@
+---
+title: mortgage calculator
+layout: default
+---
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/assets/css/mortgage.css">
+<meta charset="UTF-8">
+<title>HWK6</title>
+</head>
+<body>
+<div class="mortgage"><form id="Mortgage">
+<h2>Mortgage Calculator</h2><br>
+Enter Principal amount: <input type="text" name="principal" />
+<br><br>
+Enter Annual Percentage Rate: <input type="text" name="APR" />
+<br><br>
+Enter Loan Term in months: <input type="text" name="term" />
+<br><br>
+<div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
+<br>
+Your monthly payment: <input type="text" name="payment" value="" readonly />
+<br><br>
+Total (Sum of all) payments: <input type="text" name="total" value="" readonly />
+<br><br>
+Total interest paid: <input type="text" name="interest" value="" readonly />
+<br>
+<br>
+<div class="txt"><em>Created 05 March 2018</em></div>
+</form>
+</div>
+<script>
+
+document.getElementById("Mortgage").submit.onclick = calculate;
+function calculate () {
+        var elt = document.getElementById("Mortgage");
+        var P = parseFloat(elt.principal.value);
+        var r = parseFloat(elt.APR.value / 100) / 12;
+        var n = Math.round(parseFloat(elt.term.value));
+
+        if (isNaN(P) || P < 0 || isNaN(r) || r < 0 || isNaN(n) || n < 0) {
+                alert("Please check your input again.");
+        }
+        else {
+		N = P * r / (1 - (1 / Math.pow((1+r), n)));
+                T = (N * n).toFixed(2);
+                I = (T - P).toFixed(2);
+                elt.payment.value = N.toFixed(2);
+                elt.total.value = T;
+                elt.interest.value = I;
+        }
+}
+
+</script>
+</body>
+</html>
