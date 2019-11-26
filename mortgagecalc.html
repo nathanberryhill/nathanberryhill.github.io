@@ -8,7 +8,7 @@ permalink: /mortgage/
 <head>
 <link rel="stylesheet" type="text/css" href="/assets/css/mortgage.css">
 <meta charset="UTF-8">
-<title>HWK6</title>
+<title></title>
 </head>
 <body>
 <div class="mortgage"><form id="Mortgage">
@@ -36,20 +36,20 @@ Total interest paid: <input type="text" name="interest" value="" readonly />
 document.getElementById("Mortgage").submit.onclick = calculate;
 function calculate () {
         var elt = document.getElementById("Mortgage");
-        var P = parseFloat(elt.principal.value);
-        var r = parseFloat(elt.APR.value / 100) / 12;
-        var n = Math.round(parseFloat(elt.term.value));
+        var prin = parseFloat(elt.principal.value);
+        var rate = parseFloat(elt.APR.value / 100) / 12;
+        var numMonths = Math.round(parseFloat(elt.term.value));
 
-        if (isNaN(P) || P < 0 || isNaN(r) || r < 0 || isNaN(n) || n < 0) {
+        if (isNaN(prin) || prin < 0 || isNaN(rate) || rate < 0 || isNaN(numMonths) || numMonths < 0) {
                 alert("Please check your input again.");
         }
         else {
-		N = P * r / (1 - (1 / Math.pow((1+r), n)));
-                T = (N * n).toFixed(2);
-                I = (T - P).toFixed(2);
-                elt.payment.value = N.toFixed(2);
-                elt.total.value = T;
-                elt.interest.value = I;
+		monthlyPayment = prin * rate / (1 - (1 / Math.pow((1+rate), numMonths)));
+                total = (monthlyPayment * numMonths).toFixed(2);
+                interest = (total - prin).toFixed(2);
+                elt.payment.value = monthlyPayment.toFixed(2);
+                elt.total.value = total;
+                elt.interest.value = interest;
         }
 }
 
