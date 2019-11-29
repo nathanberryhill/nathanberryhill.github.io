@@ -1,0 +1,108 @@
+---
+title: 2019 tax calculator
+layout: default
+---
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/assets/css/mortgage.css">
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div class="mortgage"><form id="tax">
+<h2>2019 Tax Calculator</h2><br>
+Enter Gross Pay: <input type="text" name="gross" />
+<br><br>
+Enter Total Withholding: <input type="text" name="wh" />
+<br><br>
+Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Single<br> <input type="radio" name="status" value=1 /> Married Filing Jointly<br> <input type="radio" name="status" value=2 /> Married Filing Separately<br> <input type="radio" name="status" value=3 /> Head of Household
+<div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
+<br>
+Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
+<br><br>
+<span id="refato">Refund:</span> <input type="text" name="diff" value="" readonly />
+<br>
+<br>
+<div class="txt"><em>Created 29 November 2019</em></div>
+</form>
+</div>
+<script>
+
+document.getElementById("tax").submit.onclick = calculate;
+function calculate () {
+        var elt = document.getElementById("tax");
+        var G = parseFloat(elt.gross.value);
+        var W = parseFloat(elt.wh.value);
+        var S = parseFloat(elt.status.value);
+
+        if (isNaN(G) || G < 0 || isNaN(W) || W < 0 || isNaN(S) || S < 0) {
+                alert("Please check your input again.");
+        } else if (S == 0 || S == 2) {
+                G = G - 12200;
+                if (G < 0) {tax = 0}
+                else if (G < 9700) {
+                        tax = G * 0.10;
+                } else if (G <= 39475) {
+                        tax = 9700 * 0.1 + (G - 9700) * 0.12;
+                } else if (G <= 84200) {
+                        tax = 9700 * 0.1 + (39475-9700) * 0.12 + (G - 39475) * 0.22;
+                } else if (G <= 160725) {
+                        tax = 9700 * 0.1 + (39475-9700) * 0.12 + (84200 - 39475) * 0.22 + (G - 84200) * 0.24;
+                } else if (G <= 204100) {
+                        tax = 9700 * 0.1 + (39475-9700) * 0.12 + (84200 - 39475) * 0.22 + (160725 - 84200) * 0.24 + (G - 160725) * 0.32;
+                } else if (G <= 510300) {
+                        tax = 9700 * 0.1 + (39475-9700) * 0.12 + (84200 - 39475) * 0.22 + (160725 - 84200) * 0.24 + (204100 - 160725) * 0.32 + (G - 204100) * 0.35;
+                } else {
+                        tax = 9700 * 0.1 + (39475-9700) * 0.12 + (84200 - 39475) * 0.22 + (160725 - 84200) * 0.24 + (204100 - 160725) * 0.32 + (510300 - 204100) * 0.35 + (G - 510300) * 0.37;
+                }
+        } else if (S == 1) {
+                G = G - 24400;
+                if (G < 0) {tax = 0}
+                else if (G < 19400) {
+                        tax = G * 0.10;
+                } else if (G <= 78950) {
+                        tax = 19400 * 0.1 + (G - 19400) * 0.12;
+                } else if (G <= 168400) {
+                        tax = 19400 * 0.1 + (78950-19400) * 0.12 + (G - 78950) * 0.22;
+                } else if (G <= 321450) {
+                        tax = 19400 * 0.1 + (78950-19400) * 0.12 + (168400 - 78950) * 0.22 + (G - 168400) * 0.24;
+                } else if (G <= 408200) {
+                        tax = 19400 * 0.1 + (78950-19400) * 0.12 + (168400 - 78950) * 0.22 + (321450 - 168400) * 0.24 + (G - 321450) * 0.32;
+                } else if (G <= 612350) {
+                        tax = 19400 * 0.1 + (78950-19400) * 0.12 + (168400 - 78950) * 0.22 + (321450 - 168400) * 0.24 + (408200 - 321450) * 0.32 + (G - 408200) * 0.35;
+                } else {
+                        tax = 19400 * 0.1 + (78950-19400) * 0.12 + (168400 - 78950) * 0.22 + (321450 - 168400) * 0.24 + (408200 - 321450) * 0.32 + (612350 - 408200) * 0.35 + (G - 612350) * 0.37;
+                }
+
+        } else if (S == 3) {
+                G = G - 18350;
+                if (G < 0) {tax = 0}
+                else if (G < 13850) {
+                        tax = G * 0.10;
+                } else if (G <= 52850) {
+                        tax = 13850 * 0.1 + (G - 13850) * 0.12;
+                } else if (G <= 84200) {
+                        tax = 13850 * 0.1 + (52850-13850) * 0.12 + (G - 52850) * 0.22;
+                } else if (G <= 160700) {
+                        tax = 13850 * 0.1 + (52850-13850) * 0.12 + (84200 - 52850) * 0.22 + (G - 84200) * 0.24;
+                } else if (G <= 204100) {
+                        tax = 13850 * 0.1 + (52850-13850) * 0.12 + (84200 - 52850) * 0.22 + (160700 - 84200) * 0.24 + (G - 160700) * 0.32;
+                } else if (G <= 510300) {
+                        tax = 13850 * 0.1 + (52850-13850) * 0.12 + (84200 - 52850) * 0.22 + (160700 - 84200) * 0.24 + (204100 - 160700) * 0.32 + (G - 204100) * 0.35;
+                } else {
+                        tax = 13850 * 0.1 + (52850-13850) * 0.12 + (84200 - 52850) * 0.22 + (160700 - 84200) * 0.24 + (204100 - 160700) * 0.32 + (510300 - 204100) * 0.35 + (G - 510300) * 0.37;
+                }
+        }
+        elt.totaltax.value = tax.toFixed(2);
+        if (tax - W < 0) {
+                elt.diff.value = -1 * (tax - W).toFixed(2);
+                document.getElementById("refato").innerHTML = "Refund: ";
+        } else {
+                elt.diff.value = (tax - W).toFixed(2);
+                document.getElementById("refato").innerHTML = "Additional Tax Owed: "
+        }
+        }
+</script>
+</body>
+</html>
