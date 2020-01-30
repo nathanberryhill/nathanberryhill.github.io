@@ -86,7 +86,7 @@ h1, h2, h3{
     }
 #content-wrapper a:hover {
     color:#766a51;
-    background: #d4e9aa;
+    background: #ddb44f;
     text-decoration:none;
     }
 #warning {
@@ -117,7 +117,7 @@ h1, h2, h3{
  #left-menu a:hover {
     color:#766a51;
     line-height:1.8em;
-    background: #d4e9aa;
+    background: #ddb44f;
     text-decoration:none;
     }
 .footer {
