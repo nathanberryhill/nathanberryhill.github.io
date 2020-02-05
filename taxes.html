@@ -12,9 +12,9 @@ layout: default
 <body>
 <div class="mortgage"><form id="tax">
 <h2>2019 Tax Calculator</h2><br>
-Enter Gross Pay: <input type="text" name="gross" />
+Enter Gross Pay: <input type="text" name="gross" placeholder=" W2 Box 1" />
 <br><br>
-Enter Total Withholding: <input type="text" name="wh" />
+Enter Total Withholding: <input type="text" name="wh" placeholder=" W2 Box 2" />
 <br><br>
 Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Single<br> <input type="radio" name="status" value=1 /> Married Filing Jointly<br> <input type="radio" name="status" value=2 /> Married Filing Separately<br> <input type="radio" name="status" value=3 /> Head of Household
 <div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
@@ -27,6 +27,7 @@ Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
 <div class="txt"><em>Created 29 November 2019</em></div>
 </form>
 </div>
+</body>
 <script>
 window.alert("ATTENTION:\n\nThis is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY.\n\nThis tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.");
 
@@ -106,5 +107,4 @@ function calculate () {
         }
         }
 </script>
-</body>
 </html>
