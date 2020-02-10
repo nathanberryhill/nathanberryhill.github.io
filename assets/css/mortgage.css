@@ -11,11 +11,13 @@ body, html {
 }
 
 .mortgage {
-	background-color:#fff;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
 	font-family: Courier, Monospace;
 	border-radius: 15px;
 	padding: 5px;
+	background: #ddb44f;
 }
 
 .btn {
