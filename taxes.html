@@ -9,7 +9,7 @@ layout: default
 <meta charset="UTF-8">
 <title></title>
 </head>
-<body>
+<body onload="attn()">
 <div class="mortgage"><form id="tax">
 <h2>2019 Tax Calculator</h2><br>
 Enter Gross Pay: <input type="text" name="gross" placeholder=" W2 Box 1" />
@@ -29,8 +29,9 @@ Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
 </div>
 </body>
 <script>
-window.alert("ATTENTION:\n\nThis is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY.\n\nThis tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.");
-
+function attn() {
+        window.alert("ATTENTION:\n\nThis is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY.\n\nThis tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.");
+}
 
 document.getElementById("tax").submit.onclick = calculate;
 function calculate () {
