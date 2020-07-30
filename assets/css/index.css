@@ -78,12 +78,12 @@ h1, h2, h3{
 
     }
 #content-wrapper  a{
-    /*color:#a09373;  */
-    color: #766a51;
+    /*color:#a09373;
+    color: #766a51;*/
     text-decoration:none;
     }
 #content-wrapper a:hover {
-    color:#766a51;
+    /* color:#766a51;*/
     background: #ddb44f;
     text-decoration:none;
     }
