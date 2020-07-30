@@ -108,12 +108,12 @@ h1, h2, h3{
     padding-left:.5em;  
     }
 #left-menu a {
-     color:#766a51;
+     /*color:#766a51;*/
      line-height:1.8em;
      text-decoration:none;
      }
  #left-menu a:hover {
-    color:#766a51;
+    /*color:#766a51;*/
     line-height:1.8em;
     background: #ddb44f;
     text-decoration:none;
