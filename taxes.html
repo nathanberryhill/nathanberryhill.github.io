@@ -9,7 +9,7 @@ layout: default
 <meta charset="UTF-8">
 <title></title>
 </head>
-<body onload="attn()">
+<body onload="attn();">
 <div class="mortgage"><form id="tax">
 <h2>2020 Tax Calculator</h2><br>
 Enter Gross Pay: <input type="text" name="gross" placeholder=" W2 Box 1" />
@@ -96,6 +96,8 @@ function calculate () {
                         tax = 9875 * 0.1 + (40125-9875) * 0.12 + (85525 - 40125) * 0.22 + (163300 - 85525) * 0.24 + (207350 - 163300) * 0.32 + (G - 207350) * 0.35;
                 } else {
                         tax = 9875 * 0.1 + (40125-9875) * 0.12 + (85525 - 40125) * 0.22 + (163300 - 85525) * 0.24 + (207350 - 163300) * 0.32 + (518400 - 207350) * 0.35 + (G - 518400) * 0.37; 
+                }
+
         } else if (S == 3) {
                 G = G - 18650;
                 if (G < 0) {tax = 0}
