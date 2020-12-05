@@ -59,7 +59,7 @@ permalink: /
          Collatz Conjecture </a><br />
     <a href="http://www.asciitable.com/">
          ASCII chart </a><br /><br />
-    2020 General Election: <br><span id="election2020"></span>
+    2020 General Election: <br><span id="election2022"></span>
 
   <br />
 </div>
@@ -156,7 +156,7 @@ permalink: /
 </div>
 </body>
 <script>
-var countDownDate = new Date("Nov 3, 2020 19:00:00").getTime();
+var countDownDate = new Date("Nov 8, 2022 19:00:00").getTime();
 
 var x = setInterval(function() {
   var now = new Date().getTime();
@@ -168,12 +168,12 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("election2020").innerHTML = days + " d, " + hours + " h, "
+  document.getElementById("election2022").innerHTML = days + " d, " + hours + " h, "
   + minutes + " m, and " + seconds + " s ";
      
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("election2020").innerHTML = "";
+    document.getElementById("election2022").innerHTML = "";
   }
 }, 333.333333333);
 </script>
