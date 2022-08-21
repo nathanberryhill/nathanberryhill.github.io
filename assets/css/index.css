@@ -13,7 +13,7 @@ h1, h2, h3{
 }
 
 #mainheader {
-    background:#ddb44f;
+    background:darkseagreen;
     height:3em;
     color: #000;
     font-size: 2em;
@@ -84,7 +84,7 @@ h1, h2, h3{
     }
 #content-wrapper a:hover {
     /* color:#766a51;*/
-    background: #ddb44f;
+    background: darkseagreen;
     text-decoration:none;
     }
 #warning {
@@ -115,7 +115,7 @@ h1, h2, h3{
  #left-menu a:hover {
     color:#000;
     line-height:1.8em;
-    background: #ddb44f;
+    background: darkseagreen;
     text-decoration:none;
     }
 .footer {
