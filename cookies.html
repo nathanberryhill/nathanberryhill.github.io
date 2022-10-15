@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<meta charset="UTF-8">
+<title>Nathan Berryhill | Cookies</title>
+</head>
+<body>
+	<h1>Cookies</h1>
+Cookies are data, stored in small text files, in your browser. 
+<br>
+When a web server sends a web page to a browser, the connection gets closed and so the server forgets everything about the user.
+<br>
+Cookies were invented to solve this problem about remembering the user.
+<br>
+<ul><li>When a user visits a web page, the user's name can be stored in a cookie.</li>
+<li>Next time the user visits the page, the cookie is a token that can remember and identify the user.</li></ul>
+<br>Cookies are saved in key-value pairs like this
+<pre>Name = Johnny Appleseed</pre>
+<br>
+When a browser requests a web page from a server, cookies belonging to the page are added to the HTTP request. Thus the server will have the necessary data about users.
+
+<br><br>
+
+<button type="button" onclick="displayCookies()">Display All Cookies</button><br><br>
+
+Set <code>Name = Johnny Appleseed</code> 
+<button type="button" onclick="document.cookie='Name=Johnny Appleseed;expires=Wed, 18 Dec 2026 12:00:00 GMT'">Set Name Cookie</button><br><br>
+
+Set <code>BlockAds = False</code> 
+<button type="button" onclick="document.cookie='BlockAds=False;expires=Wed, 18 Dec 2026 12:00:00 GMT'">Set BlockAds Cookie</button><br><br>
+
+Delete Name Cookie
+<button type="button" onclick="document.cookie='Name=;expires=Thu, 01 Jan 1970'">Delete Name Cookie</button><br><br>
+
+Delete BlockAds Cookie
+<button type="button" onclick="document.cookie='BlockAds=;expires=Thu, 01 Jan 1970'">Delete BlockAds Cookie</button><br><br><br><br>
+<a href='/'>Go Home</a>
+
+</body>
+<script>
+function getAllCookies() {
+  let cookies = {};
+  document.cookie.split(";").forEach(function(el) {
+    let [k,v] = el.split("=");
+    cookies[k.trim()] = v;
+  })
+  return cookies
+}
+
+function displayCookies() {
+	cookies = getAllCookies()
+	string = ""
+	for(const cookie in cookies) {
+		if (cookies[cookie] == "") {continue;}
+		else {string += `${cookie}: ${cookies[cookie]}\n`}
+	}
+	alert(string)
+}
+</script>
+</html>
