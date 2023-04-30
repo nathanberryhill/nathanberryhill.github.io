@@ -15,7 +15,9 @@ Enter Federal Taxable Pay for one period: <input type="text" name="gross" placeh
 Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Single<br> <input type="radio" name="status" value=1 /> Married Filing Jointly<br> <input type="radio" name="status" value=2 /> Married Filing Separately<br> <input type="radio" name="status" value=3 /> Head of Household
 <div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
 <br>
-Your Base (Minimum) Withholding: <input type="text" name="totaltax" value="" readonly />
+Your Base (Minimum) Withholding This Pay Period: <input type="text" name="totaltax" value="" readonly />
+<br><br>
+Expected Total Tax Owed (Extrapolated): <input type="text" name="extrap" value="" readonly />
 <br>
 <br>
 <div style="text-align: center;"><a href="/">Go Home</a></div>
@@ -40,67 +42,61 @@ function calculate () {
         } else if (S == 0 || S == 2) {
                 G = G * 12 - 8600;
                 if (G < 5250) {tax = 0}
-                else if (G < 11000) {
-                        tax = G * 0.10;
-                } else if (G <= 44725) {
-                        tax = 11000 * 0.1 + (G - 11000) * 0.12;
-                } else if (G <= 95375) {
-                        tax = 11000 * 0.1 + (44725-11000) * 0.12 + (G - 44725) * 0.22;
-                } else if (G <= 182100) {
-                        tax = 11000 * 0.1 + (44725-11000) * 0.12 + (95375 - 44725) * 0.22 + (G - 95375) * 0.24;
-                } else if (G <= 231250) {
-                        tax = 11000 * 0.1 + (44725-11000) * 0.12 + (95375 - 44725) * 0.22 + (182100 - 95375) * 0.24 + (G - 182100) * 0.32;
-                } else if (G <= 578125) {
-                        tax = 11000 * 0.1 + (44725-11000) * 0.12 + (95375 - 44725) * 0.22 + (182100 - 95375) * 0.24 + (231250 - 182100) * 0.32 + (G - 231250) * 0.35;
+                else if (G < 16250) {
+                        tax = (G - 5250) * 0.10;
+                } else if (G <= 49975) {
+                        tax = 1100 + (G - 16250) * 0.12;
+                } else if (G <= 100625) {
+                        tax = 5147 + (G - 49975) * 0.22;
+                } else if (G <= 187350) {
+                        tax = 16290 + (G - 100625) * 0.24;
+                } else if (G <= 236500) {
+                        tax = 37104 + (G - 187350) * 0.32;
+                } else if (G <= 583375) {
+                        tax = 52832 + (G - 236500) * 0.35;
                 } else {
-                        tax = 11000 * 0.1 + (44725-11000) * 0.12 + (95375 - 44725) * 0.22 + (182100 - 95375) * 0.24 + (231250 - 182100) * 0.32 + (578125 - 231250) * 0.35 + (G - 578125) * 0.37;
+                        tax = 174238 + (G - 583375) * 0.37;
                 }
         } else if (S == 1) {
-                G = G - 27700;
-                if (G < 0) {tax = 0}
-                else if (G < 22000) {
-                        tax = G * 0.10;
-                } else if (G <= 89450) {
-                        tax = 22000 * 0.1 + (G - 22000) * 0.12;
-                } else if (G <= 190750) {
-                        tax = 22000 * 0.1 + (89450-22000) * 0.12 + (G - 89450) * 0.22;
-                } else if (G <= 364200) {
-                        tax = 22000 * 0.1 + (89450-22000) * 0.12 + (190750 - 89450) * 0.22 + (G - 190750) * 0.24;
-                } else if (G <= 462500) {
-                        tax = 22000 * 0.1 + (89450-22000) * 0.12 + (190750 - 89450) * 0.22 + (364200 - 190750) * 0.24 + (G - 364200) * 0.32;
-                } else if (G <= 693750) {
-                        tax = 22000 * 0.1 + (89450-22000) * 0.12 + (190750 - 89450) * 0.22 + (364200 - 190750) * 0.24 + (462500 - 364200) * 0.32 + (G - 462500) * 0.35;
+                G = G - 12900;
+                if (G < 14800) {tax = 0}
+                else if (G < 36800) {
+                        tax = (G - 14800) * 0.10;
+                } else if (G <= 104250) {
+                        tax = 2200 + (G - 36800) * 0.12;
+                } else if (G <= 205550) {
+                        tax = 10294 + (G - 104250) * 0.22;
+                } else if (G <= 379000) {
+                        tax = 32580 + (G - 205550) * 0.24;
+                } else if (G <= 477300) {
+                        tax = 74208 + (G - 379000) * 0.32;
+                } else if (G <= 708550) {
+                        tax = 105664 + (G - 477300) * 0.35;
                 } else {
-                        tax = 22000 * 0.1 + (89450-22000) * 0.12 + (190750 - 89450) * 0.22 + (364200 - 190750) * 0.24 + (462500 - 364200) * 0.32 + (693750 - 462500) * 0.35 + (G - 693750) * 0.37;
+                        tax = 186601.5 + (G - 708550) * 0.37;
                 }
 
         } else if (S == 3) {
-                G = G - 20800;
-                if (G < 0) {tax = 0}
-                else if (G < 15700) {
-                        tax = G * 0.10;
-                } else if (G <= 59850) {
-                        tax = 15700 * 0.1 + (G - 15700) * 0.12;
-                } else if (G <= 95350) {
-                        tax = 15700 * 0.1 + (59850-15700) * 0.12 + (G - 59850) * 0.22;
-                } else if (G <= 182100) {
-                        tax = 15700 * 0.1 + (59850-15700) * 0.12 + (95350 - 59850) * 0.22 + (G - 95350) * 0.24;
-                } else if (G <= 231250) {
-                        tax = 15700 * 0.1 + (59850-15700) * 0.12 + (95350 - 59850) * 0.22 + (182100 - 95350) * 0.24 + (G - 182100) * 0.32;
-                } else if (G <= 578100) {
-                        tax = 15700 * 0.1 + (59850-15700) * 0.12 + (95350 - 59850) * 0.22 + (182100 - 95350) * 0.24 + (231250 - 182100) * 0.32 + (G - 231250) * 0.35;
+                G = G - 8600;
+                if (G < 12200) {tax = 0}
+                else if (G < 27900) {
+                        tax = (G - 12200) * 0.10;
+                } else if (G <= 72050) {
+                        tax = 1570 + (G - 27900) * 0.12;
+                } else if (G <= 107550) {
+                        tax = 6868 + (G - 72050) * 0.22;
+                } else if (G <= 194300) {
+                        tax = 14678 + (G - 107550) * 0.24;
+                } else if (G <= 243450) {
+                        tax = 35498 (G - 194300) * 0.32;
+                } else if (G <= 590300) {
+                        tax = 51226 + (G - 243450) * 0.35;
                 } else {
-                        tax = 15700 * 0.1 + (59850-15700) * 0.12 + (95350 - 59850) * 0.22 + (182100 - 95350) * 0.24 + (231250 - 182100) * 0.32 + (578100 - 231250) * 0.35 + (G - 578100) * 0.37;
+                        tax = 172623.5 + (G - 590300) * 0.37;
                 }
         }
-        elt.totaltax.value = tax.toFixed(2);
-        if (tax - W < 0) {
-                elt.diff.value = -1 * (tax - W).toFixed(2);
-                document.getElementById("refato").innerHTML = "Refund: ";
-        } else {
-                elt.diff.value = (tax - W).toFixed(2);
-                document.getElementById("refato").innerHTML = "Additional Tax Owed: "
-        }
+        elt.totaltax.value = (tax / 12).toFixed(2);
+        elt.extrap.value = tax.toFixed(2);
         }
 </script>
 </html>
