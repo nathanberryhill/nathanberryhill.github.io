@@ -38,10 +38,12 @@ h1, h2, h3{
 }
 
 #nav {
-    color:#000;
+    /*color:#000;
     padding:1em;
     padding-left:0;
-    padding-bottom: 3em;
+    padding-bottom: 2em; */
+    margin: auto;
+    text-align: center;
 }
 #nav a {
     color:#000;
@@ -65,6 +67,13 @@ h1, h2, h3{
     font-size:.9em;
     margin:0 3% 0% 3%;
     }
+
+.inline {
+    display: inline;
+    padding: 1.5%;
+    text-align: center;
+    margin: auto;
+}
 
 #content-wrapper {
     margin-top:1em; 
