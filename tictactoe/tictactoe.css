@@ -1,0 +1,49 @@
+body {
+	background-color: mediumseagreen;
+	font-family: "Gill Sans", sans-serif
+}
+
+h1 {
+	margin: 0px;
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
+
+table {
+	padding: 25px;
+	background-color: mediumseagreen;
+	border-spacing: 0px;
+	text-align:center;
+	margin: auto;
+}
+
+button {
+	display: block;
+	font-size: 150px;
+	text-align: center;
+    width: 180px;
+    height: 180px;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+button:focus {
+	outline: none;
+}
+
+td {
+	width: 180px;
+	height: 180px;
+	padding: 0px;
+	margin-bottom: 0px
+}
+
+tr.bordered td {
+	border-bottom: 4px solid black;
+}
+
+#block00, #block10, #block20, #block01, #block11, #block21 {
+	border-right: 4px solid black;
+}
