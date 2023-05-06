@@ -7,15 +7,21 @@
 <title>Nathan Berryhill | Tax Calculator</title>
 </head>
 <body onload="attn()">
+        <dialog data-modal id="dialog-attn" style="max-width: 50%">
+        <div>
+                Hey there!<br><br>This is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY (90&percnt; of folks do).<br><br>This tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.<br><br>
+                <button id="button-close" onclick="closeDialog()">Got it</button>
+        </div>
+</dialog>
 <div class="mortgage"><form id="tax">
-<h2>Tax Year 2023 Federal Withholding Calculator</h2>
+<h2>Federal Withholding Calculator<br>Tax Year 2023</h2>
 <h6><i>Use for filing taxes in calendar year 2024</i></h6><br>
 Enter Federal Taxable Pay for one period: <input type="text" name="gross" placeholder="" />
 <br><br>
 Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Single<br> <input type="radio" name="status" value=1 /> Married Filing Jointly<br> <input type="radio" name="status" value=2 /> Married Filing Separately<br> <input type="radio" name="status" value=3 /> Head of Household
 <div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
 <br>
-Your Base (Minimum) Withholding This Pay Period: <input type="text" name="totaltax" value="" readonly />
+Minimum Withholding This Pay Period: <input type="text" name="totaltax" value="" readonly />
 <br><br>
 Expected Total Tax Owed (Extrapolated*): <input type="text" name="extrap" value="" readonly />
 <br>
@@ -28,7 +34,11 @@ Expected Total Tax Owed (Extrapolated*): <input type="text" name="extrap" value=
 </body>
 <script>
 function attn() {
-        window.alert("ATTENTION:\n\nThis is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY.\n\nThis tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.");
+        document.getElementById("dialog-attn").showModal()
+}
+
+function closeDialog() {
+        document.getElementById("dialog-attn").close()
 }
 
 document.getElementById("tax").submit.onclick = calculate;

@@ -7,8 +7,14 @@
 <title>Nathan Berryhill | Tax Calculator</title>
 </head>
 <body onload="attn()">
+<dialog data-modal id="dialog-attn" style="max-width: 50%">
+        <div>
+                Hey there!<br><br>This is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY (90&percnt; of folks do).<br><br>This tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.<br><br>
+                <button id="button-close" onclick="closeDialog()">Got it</button>
+        </div>
+</dialog>
 <div class="mortgage"><form id="tax">
-<h2>Tax Year 2022 Tax Calculator</h2><br>
+<h2>Income Tax Calculator<br>Tax Year 2022</h2><br>
 <h6><i>Use for filing taxes in calendar year 2023</i></h6><br>
 Enter Gross Pay: <input type="text" name="gross" placeholder=" W2 Box 1" />
 <br><br>
@@ -29,7 +35,11 @@ Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
 </body>
 <script>
 function attn() {
-        window.alert("ATTENTION:\n\nThis is only a tool. It can calculate any additional tax owed or expected refund with the standard deduction ONLY.\n\nThis tool should not be a substitute for a tax lawyer or specialist. Please consult one for more info.");
+        document.getElementById("dialog-attn").showModal()
+}
+
+function closeDialog() {
+        document.getElementById("dialog-attn").close()
 }
 
 document.getElementById("tax").submit.onclick = calculate;
