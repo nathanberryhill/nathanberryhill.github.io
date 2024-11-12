@@ -35,11 +35,11 @@ Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
 </body>
 <script>
 function attn() {
-        document.getElementById("dialog-attn").showModal()
+        document.getElementById("dialog-attn").showModal();
 }
 
 function closeDialog() {
-        document.getElementById("dialog-attn").close()
+        document.getElementById("dialog-attn").close();
 }
 
 document.getElementById("tax").submit.onclick = calculate;
@@ -83,8 +83,9 @@ function calculate () {
                 document.getElementById("refato").innerHTML = "Refund: ";
         } else {
                 elt.diff.value = (tax - W).toFixed(2);
-                document.getElementById("refato").innerHTML = "Additional Tax Owed: "
+                document.getElementById("refato").innerHTML = "Additional Tax Owed: ";
         }
         }
+}
 </script>
 </html>
