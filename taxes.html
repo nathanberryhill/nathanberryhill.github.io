@@ -14,8 +14,8 @@
         </div>
 </dialog>
 <div class="mortgage"><form id="tax">
-<h2>Federal Income Tax Calculator<br>Tax Year 2024</h2><br>
-<h6><i>Use for filing taxes in calendar year 2025</i></h6><br>
+<h2>Federal Income Tax Calculator<br>Tax Year 2025</h2><br>
+<h6><i>Use for filing taxes in calendar year 2026</i></h6><br>
 Enter Gross Pay: <input type="text" name="gross" placeholder=" W2 Box 1" />
 <br><br>
 Enter Total Withholding: <input type="text" name="wh" placeholder=" W2 Box 2" />
@@ -29,7 +29,7 @@ Your Total Taxes: <input type="text" name="totaltax" value="" readonly />
 <br>
 <br>
 <div style="text-align: center;"><a href="/">Go Home</a></div>
-<div class="txt"><em>Created 29 November 2019. Updated 23 December 2023.</em></div>
+<div class="txt"><em>Created 29 November 2019. Updated 10 November 2024.</em></div>
 </form>
 </div>
 </body>
@@ -49,13 +49,13 @@ function calculate () {
         var W = parseFloat(elt.wh.value);
         var S = parseFloat(elt.status.value);
 
-        lvl0 = [14600, 29200, 14600, 21900]; // aka std ded
-        lvl1 = [11600, 23200, 11600, 16550];
-        lvl2 = [47150, 94300, 47150, 63100];
-        lvl3 = [100525, 201050, 100525, 100500];
-        lvl4 = [191950, 383900, 191950, 191950];
-        lvl5 = [243725, 487450, 243725, 243700];
-        lvl6 = [609350, 731200, 365600, 609350];
+        lvl0 = [15000, 30000, 15000, 22500] // aka std ded
+        lvl1 = [11925, 23850, 11925, 17000];
+        lvl2 = [48475, 96950, 48475, 64850];
+        lvl3 = [103350, 206700, 103350, 103350];
+        lvl4 = [197300, 394600, 197300, 197300];
+        lvl5 = [250525, 501050, 250525, 250500];
+        lvl6 = [626350, 751600, 375800, 626350];
 
         if (isNaN(G) || G < 0 || isNaN(W) || W < 0 || isNaN(S) || S < 0) {
                 alert("Please check your input again.");
