@@ -58,7 +58,7 @@
          Collatz Conjecture </a><br />
     <a href="http://www.asciitable.com/">
          ASCII chart </a><br /><br />
-    2024 General Election: <br><span id="election2024"></span>
+    2026 Primary Election: <br><span id="election"></span>
 
   <br />
 </div>
@@ -161,7 +161,7 @@
 </div>
 </body>
 <script>
-var countDownDate = new Date("Nov 5, 2024 19:00:00").getTime();
+var countDownDate = new Date("Mar 3, 2026 19:00:00").getTime();
 
 var x = setInterval(function() {
   var now = new Date().getTime();
@@ -173,12 +173,12 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("election2024").innerHTML = days + " d, " + hours + " h, "
+  document.getElementById("election").innerHTML = days + " d, " + hours + " h, "
   + minutes + " m, and " + seconds + " s ";
      
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("election2024").innerHTML = "";
+    document.getElementById("election").innerHTML = "";
   }
 }, 333.333333333);
 </script>
