@@ -23,7 +23,7 @@ Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Si
 <br>
 ERS Retirement Contribution (9.5&percnt;): <input type="text" name="erscont" id="erscont" value="" readonly />
 <br><br>
-401(k) Contribution (1.0&percnt;): <input type="text" name="k401" id="k401" value="" readonly />
+401(k) Contribution (<input type="text" name="k401pct" id="k401pct" value="1" style="width:20px; float:none;" /> &percnt;): &nbsp; <input type="text" name="k401" id="k401" value="" readonly />
 <br><br>
 Dental Premium: <input type="text" name="dental" id="dental" value="9.59" />
 <br><br>
@@ -53,8 +53,9 @@ function calculate () {
         var Gross = parseFloat(elt.gross.value);
         var S = parseFloat(elt.status.value);
         var D = parseFloat(elt.dental.value);
+        var k = parseFloat(elt.k401pct.value) * .01;
         var ERS = Gross * .095;
-        var k401 = (Gross-ERS) * .01;
+        var k401 = (Gross-ERS) * k;
         var G = (Gross - ERS - k401 - D) * 12; // federal taxable becomes new G for calcs
         var fica_taxable = Gross - D;
         var fica = fica_taxable * .0765;
