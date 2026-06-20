@@ -14,100 +14,93 @@
         </div>
 </dialog>
 <div class="mortgage"><form id="tax">
-<h2>Federal Withholding Calculator<br>Tax Year 2023</h2>
-<h6><i>Use for filing taxes in calendar year 2024</i></h6><br>
-Enter Federal Taxable Pay for one period: <input type="text" name="gross" placeholder="" />
+<h2>Federal Withholding Calculator<br>Tax Year 2026</h2>
+<h6><i>Use for filing taxes in calendar year 2027</i></h6><br>
+Enter Gross Taxable Pay for one period: <input type="text" name="gross" placeholder="" />
 <br><br>
 Select Filing Status:<br> <input type="radio" name="status" value=0 checked/> Single<br> <input type="radio" name="status" value=1 /> Married Filing Jointly<br> <input type="radio" name="status" value=2 /> Married Filing Separately<br> <input type="radio" name="status" value=3 /> Head of Household
 <div class="btn"><input type="button" class="button" name="submit" value="Calculate" />&nbsp;<input type="reset" class="clear" value="Clear" /></div>
 <br>
-Minimum Withholding This Pay Period: <input type="text" name="totaltax" value="" readonly />
+ERS Retirement Contribution (9.5&percnt;): <input type="text" name="erscont" id="erscont" value="" readonly />
 <br><br>
-Expected Total Tax Owed (Extrapolated*): <input type="text" name="extrap" value="" readonly />
-<br>
-<br><p style="font-size: 8pt; text-align: center;">*Extrapolated here means that this is the projected tax owed<br> assuming your pay is the same all year and does not change.</p>
+401(k) Contribution (1.0&percnt;): <input type="text" name="k401" id="k401" value="" readonly />
+<br><br>
+Dental Premium: <input type="text" name="dental" id="dental" value="9.59" />
+<br><br>
+FICA Taxes: <input type="text" name="fica" id="fica" value="" readonly />
+<br><br>
+Federal Income Tax: <input type="text" name="fit" id="fit" value="" readonly />
+<br><br>
+Take Home: <input type="text" name="takehome" id="takehome" value="" readonly />
 <br>
 <div style="text-align: center;"><a href="/">Go Home</a></div>
-<div class="txt"><em>Created 29 November 2019. Updated 09 January 2023.</em></div>
+<div class="txt"><em>Created 29 November 2019. Updated 20 June 2026.</em></div>
 </form>
 </div>
 </body>
 <script>
 function attn() {
-        document.getElementById("dialog-attn").showModal()
+        document.getElementById("dialog-attn").showModal();
 }
 
 function closeDialog() {
-        document.getElementById("dialog-attn").close()
+        document.getElementById("dialog-attn").close();
 }
 
 document.getElementById("tax").submit.onclick = calculate;
 function calculate () {
         var elt = document.getElementById("tax");
-        var G = parseFloat(elt.gross.value);
-        //var W = parseFloat(elt.wh.value);
+        var Gross = parseFloat(elt.gross.value);
         var S = parseFloat(elt.status.value);
+        var D = parseFloat(elt.dental.value);
+        var ERS = Gross * .095;
+        var k401 = (Gross-ERS) * .01;
+        var G = (Gross - ERS - k401 - D) * 12; // federal taxable becomes new G for calcs
+        var fica_taxable = Gross - D;
+        var fica = fica_taxable * .0765;
+
+        lvl0 = [16100, 32200, 16100, 24150]; // aka std ded
+        lvl1 = [12400, 24800, 12400, 17700];
+        lvl2 = [50400, 100800, 50400, 67450];
+        lvl3 = [105700, 211400, 105700, 105700];
+        lvl4 = [201775, 403550, 201775, 201750];
+        lvl5 = [256225, 512450, 256225, 256200];
+        lvl6 = [640600, 768700, 384350, 640600];
 
         if (isNaN(G) || G < 0 || isNaN(S) || S < 0) {
                 alert("Please check your input again.");
-        } else if (S == 0 || S == 2) {
-                G = G * 12 - 8600;
-                if (G < 5250) {tax = 0}
-                else if (G < 16250) {
-                        tax = (G - 5250) * 0.10;
-                } else if (G <= 49975) {
-                        tax = 1100 + (G - 16250) * 0.12;
-                } else if (G <= 100625) {
-                        tax = 5147 + (G - 49975) * 0.22;
-                } else if (G <= 187350) {
-                        tax = 16290 + (G - 100625) * 0.24;
-                } else if (G <= 236500) {
-                        tax = 37104 + (G - 187350) * 0.32;
-                } else if (G <= 583375) {
-                        tax = 52832 + (G - 236500) * 0.35;
+        } else {
+                G = G - lvl0[S];
+                if (G < 0) {tax = 0}
+                else if (G < lvl1[S]) {
+                        tax = G * 0.10;
+                } else if (G <= lvl2[S]) {
+                        tax = lvl1[S] * 0.1 + (G - lvl1[S]) * 0.12;
+                } else if (G <= lvl3[S]) {
+                        tax = lvl1[S] * 0.1 + (lvl2[S]-lvl1[S]) * 0.12 + (G - lvl2[S]) * 0.22;
+                } else if (G <= lvl4[S]) {
+                        tax = lvl1[S] * 0.1 + (lvl2[S]-lvl1[S]) * 0.12 + (lvl3[S] - lvl2[S]) * 0.22 + (G - lvl3[S]) * 0.24;
+                } else if (G <= lvl5[S]) {
+                        tax = lvl1[S] * 0.1 + (lvl2[S]-lvl1[S]) * 0.12 + (lvl3[S] - lvl2[S]) * 0.22 + (lvl4[S] - lvl3[S]) * 0.24 + (G - lvl4[S]) * 0.32;
+                } else if (G <= lvl6[S]) {
+                        tax = lvl1[S] * 0.1 + (lvl2[S]-lvl1[S]) * 0.12 + (lvl3[S] - lvl2[S]) * 0.22 + (lvl4[S] - lvl3[S]) * 0.24 + (lvl5[S] - lvl4[S]) * 0.32 + (G - lvl5[S]) * 0.35;
                 } else {
-                        tax = 174238 + (G - 583375) * 0.37;
+                        tax = lvl1[S] * 0.1 + (lvl2[S]-lvl1[S]) * 0.12 + (lvl3[S] - lvl2[S]) * 0.22 + (lvl4[S] - lvl3[S]) * 0.24 + (lvl5[S] - lvl4[S]) * 0.32 + (lvl6[S] - lvl5[S]) * 0.35 + (G - lvl6[S]) * 0.37;
                 }
-        } else if (S == 1) {
-                G = G - 12900;
-                if (G < 14800) {tax = 0}
-                else if (G < 36800) {
-                        tax = (G - 14800) * 0.10;
-                } else if (G <= 104250) {
-                        tax = 2200 + (G - 36800) * 0.12;
-                } else if (G <= 205550) {
-                        tax = 10294 + (G - 104250) * 0.22;
-                } else if (G <= 379000) {
-                        tax = 32580 + (G - 205550) * 0.24;
-                } else if (G <= 477300) {
-                        tax = 74208 + (G - 379000) * 0.32;
-                } else if (G <= 708550) {
-                        tax = 105664 + (G - 477300) * 0.35;
-                } else {
-                        tax = 186601.5 + (G - 708550) * 0.37;
-                }
-
-        } else if (S == 3) {
-                G = G - 8600;
-                if (G < 12200) {tax = 0}
-                else if (G < 27900) {
-                        tax = (G - 12200) * 0.10;
-                } else if (G <= 72050) {
-                        tax = 1570 + (G - 27900) * 0.12;
-                } else if (G <= 107550) {
-                        tax = 6868 + (G - 72050) * 0.22;
-                } else if (G <= 194300) {
-                        tax = 14678 + (G - 107550) * 0.24;
-                } else if (G <= 243450) {
-                        tax = 35498 (G - 194300) * 0.32;
-                } else if (G <= 590300) {
-                        tax = 51226 + (G - 243450) * 0.35;
-                } else {
-                        tax = 172623.5 + (G - 590300) * 0.37;
-                }
+        //elt.totaltax.value = tax.toFixed(2);
+        document.getElementById("erscont").value = ERS.toFixed(2);
+        document.getElementById("k401").value = k401.toFixed(2);
+        document.getElementById("fica").value = fica.toFixed(2);
+        document.getElementById("fit").value = (tax/12).toFixed(2);
+        document.getElementById("takehome").value = (Gross - ERS - k401 - D - fica - tax/12).toFixed(2);
+        /* if (tax - W < 0) {
+                elt.diff.value = -1 * (tax - W).toFixed(2);
+                document.getElementById("refato").innerHTML = "Refund: ";
+        } else {
+                elt.diff.value = (tax - W).toFixed(2);
+                document.getElementById("refato").innerHTML = "Additional Tax Owed: ";
+        } */
         }
-        elt.totaltax.value = (tax / 12).toFixed(2);
-        elt.extrap.value = tax.toFixed(2);
-        }
+}
 </script>
 </html>
